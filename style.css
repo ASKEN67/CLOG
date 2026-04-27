@@ -48,7 +48,12 @@ body {
     font-weight: 400;
     font-size: 0.9rem;
     text-transform: uppercase;
+    transition: 0.3s;
 }
+
+.nav-links a:hover { color: #b08d57; }
+
+.cart-icon { font-size: 1.2rem; cursor: pointer; }
 
 /* Hero Section */
 .hero {
@@ -78,6 +83,7 @@ body {
     text-decoration: none;
     margin-top: 2rem;
     transition: 0.4s;
+    border-radius: 2px;
 }
 
 .btn-main:hover { background: #8e6f42; }
@@ -107,7 +113,7 @@ body {
     transition: 0.3s;
 }
 
-.product-card:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+.product-card:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.1); transform: translateY(-5px); }
 
 .badge {
     position: absolute;
@@ -117,6 +123,7 @@ body {
     color: white;
     padding: 5px 12px;
     font-size: 0.7rem;
+    z-index: 10;
 }
 
 .product-img img {
@@ -130,6 +137,7 @@ body {
     font-weight: 700;
     color: #b08d57;
     margin: 10px 0;
+    font-size: 1.1rem;
 }
 
 .add-to-cart {
@@ -140,44 +148,102 @@ body {
     border: none;
     cursor: pointer;
     transition: 0.3s;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
 }
 
 .add-to-cart:hover { background: #b08d57; }
 
-/* Info Section */
-.info-section {
-    background: #f4f4f4;
-    padding: 60px 8%;
+/* About Us Section */
+.about-section {
+    padding: 80px 8%;
+    background-color: #fff;
 }
 
-.info-container {
+.about-content {
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 40px;
+    align-items: flex-start;
 }
 
-.info-box { text-align: center; max-width: 300px; }
+.about-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.about-text h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.office-info {
+    background: #f9f9f9;
+    padding: 25px;
+    border-left: 4px solid #b08d57;
+    border-radius: 4px;
+}
+
+.office-info h4 { margin-bottom: 10px; color: #222; }
+.office-info p { margin-bottom: 5px; font-size: 0.9rem; color: #444; }
+
+.about-features {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-width: 300px;
+}
+
+.info-box {
+    padding: 20px;
+    background: #fcfcfc;
+    border: 1px solid #eee;
+    text-align: center;
+}
+
+.icon { font-size: 2rem; display: block; margin-bottom: 10px; }
 
 /* Footer */
 footer {
     background: #111;
     color: #fff;
-    padding: 50px 8% 20px;
+    padding: 60px 8% 20px;
     text-align: center;
 }
+
+.footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.footer-logo span { color: #b08d57; }
+
+.footer-content p { color: #888; font-size: 0.9rem; margin-bottom: 20px; }
+
+.socials { margin-bottom: 30px; font-size: 0.8rem; letter-spacing: 1px; }
 
 .footer-bottom {
     margin-top: 40px;
     font-size: 0.8rem;
-    color: #777;
-    border-top: 1px solid #333;
+    color: #555;
+    border-top: 1px solid #222;
     padding-top: 20px;
 }
 
 /* RESPONSIVE DESIGN */
 @media (max-width: 768px) {
-    .nav-links { display: none; } /* Sembunyikan menu di HP demi kesederhanaan */
+    .navbar { padding: 1rem 5%; }
+    .nav-links { display: none; } /* Mobile menu handling usually needs JS, keeping it simple */
     .hero h1 { font-size: 2.2rem; }
+    .about-content { flex-direction: column; }
     .product-grid { grid-template-columns: 1fr; }
 }
