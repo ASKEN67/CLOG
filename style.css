@@ -1,0 +1,183 @@
+/* General Setup */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fcfcfc;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 8%;
+    background: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.logo span { color: #b08d57; }
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li { margin: 0 20px; }
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 400;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+/* Hero Section */
+.hero {
+    height: 90vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url('https://images.unsplash.com/photo-1495856458515-0637185db551?auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.btn-main {
+    display: inline-block;
+    padding: 15px 40px;
+    background: #b08d57;
+    color: #fff;
+    text-decoration: none;
+    margin-top: 2rem;
+    transition: 0.4s;
+}
+
+.btn-main:hover { background: #8e6f42; }
+
+/* Products Section */
+.products { padding: 80px 8%; }
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background: #fff;
+    border: 1px solid #eee;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    transition: 0.3s;
+}
+
+.product-card:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+
+.badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #b08d57;
+    color: white;
+    padding: 5px 12px;
+    font-size: 0.7rem;
+}
+
+.product-img img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.price {
+    font-weight: 700;
+    color: #b08d57;
+    margin: 10px 0;
+}
+
+.add-to-cart {
+    width: 100%;
+    padding: 12px;
+    background: #222;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.add-to-cart:hover { background: #b08d57; }
+
+/* Info Section */
+.info-section {
+    background: #f4f4f4;
+    padding: 60px 8%;
+}
+
+.info-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.info-box { text-align: center; max-width: 300px; }
+
+/* Footer */
+footer {
+    background: #111;
+    color: #fff;
+    padding: 50px 8% 20px;
+    text-align: center;
+}
+
+.footer-bottom {
+    margin-top: 40px;
+    font-size: 0.8rem;
+    color: #777;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .nav-links { display: none; } /* Sembunyikan menu di HP demi kesederhanaan */
+    .hero h1 { font-size: 2.2rem; }
+    .product-grid { grid-template-columns: 1fr; }
+}
